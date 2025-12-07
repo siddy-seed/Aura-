@@ -217,6 +217,14 @@ const AdminDashboard = () => {
                                     <label className="block text-xs uppercase tracking-wider text-aura-text mb-1">Description</label>
                                     <textarea name="description" rows="3" required className="input-field" value={newProduct.description} onChange={handleInputChange}></textarea>
                                 </div>
+                                <div>
+                                    <label className="block text-xs uppercase tracking-wider text-aura-text mb-1">Ingredients (comma separated)</label>
+                                    <input type="text" name="ingredients" placeholder="e.g. Glycerin, Honey, Rose Water" required className="input-field" value={newProduct.ingredients} onChange={handleInputChange} />
+                                </div>
+                                <div>
+                                    <label className="block text-xs uppercase tracking-wider text-aura-text mb-1">Sizes (comma separated)</label>
+                                    <input type="text" name="sizes" placeholder="e.g. Small, Medium, Large" required className="input-field" value={newProduct.sizes} onChange={handleInputChange} />
+                                </div>
 
                                 <div className="flex gap-4 mt-8 pt-4 border-t border-gray-100">
                                     <button type="button" onClick={() => setShowAddModal(false)} className="flex-1 py-3 text-aura-lightText hover:text-aura-dark transition-colors">Cancel</button>
