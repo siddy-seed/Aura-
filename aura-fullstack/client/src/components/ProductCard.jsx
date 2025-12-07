@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const ProductCard = ({ product }) => {
     return (
         <div className="group relative bg-white rounded-2xl border border-aura-pink/10 hover:shadow-xl hover:shadow-aura-pink/5 transition-all duration-500 overflow-hidden">
-            <Link to={`/products/${product._id}`} className="block overflow-hidden relative pb-[100%]">
+            <Link to={`/products/${product._id}`} className="block overflow-hidden relative pb-[100%] md:pb-[75%]">
                 <img
                     src={`${import.meta.env.VITE_FRONTEND_URL}${product.images[0]}`}
                     alt={product.name}

@@ -56,13 +56,13 @@ const ProductDetails = () => {
                     &larr; Back
                 </button>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                     {/* Image */}
                     <div className="bg-aura-cream/20 rounded-xl overflow-hidden shadow-sm">
                         <img
                             src={`${import.meta.env.VITE_FRONTEND_URL}${product.images[0]}`}
                             alt={product.name}
-                            className="w-full h-[500px] object-cover"
+                            className="w-full h-[320px] md:h-[500px] object-cover"
                         />
                     </div>
 

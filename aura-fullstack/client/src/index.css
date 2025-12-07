@@ -34,13 +34,18 @@ h6 {
 }
 
 .btn-primary {
-  @apply bg-aura-pink text-aura-charcoal px-8 py-3 rounded-full hover:bg-aura-blue hover:text-aura-charcoal transition-all duration-500 shadow-sm uppercase tracking-widest text-xs font-bold border border-transparent;
+  @apply bg-aura-pink text-aura-charcoal px-6 sm:px-8 py-3 rounded-full hover:bg-aura-blue hover:text-aura-charcoal transition-all duration-500 shadow-sm uppercase tracking-widest text-xs font-bold border border-transparent;
 }
 
 .btn-secondary {
-  @apply border border-aura-pink text-aura-pink px-8 py-3 rounded-full hover:bg-aura-pink hover:text-white transition-all duration-500 uppercase tracking-widest text-xs font-bold;
+  @apply border border-aura-pink text-aura-pink px-6 sm:px-8 py-3 rounded-full hover:bg-aura-pink hover:text-white transition-all duration-500 uppercase tracking-widest text-xs font-bold;
 }
 
 .input-field {
-  @apply w-full border border-gray-200 bg-white/50 p-3 focus:outline-none focus:border-aura-pink focus:ring-1 focus:ring-aura-pink/50 rounded-sm transition-all duration-300;
+  @apply w-full border border-gray-200 bg-white/50 p-2 sm:p-3 focus:outline-none focus:border-aura-pink focus:ring-1 focus:ring-aura-pink/50 rounded-sm transition-all duration-300;
+}
+
+@media (max-width: 640px) {
+  .text-5xl { font-size: 2rem; }
+  .text-3xl { font-size: 1.5rem; }
 }

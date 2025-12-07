@@ -39,7 +39,7 @@ const Home = () => {
                 initial="hidden"
                 animate="visible"
                 variants={fadeInUp}
-                className="relative h-[600px] bg-gradient-to-br from-aura-sand via-aura-cream to-aura-blue/20 flex items-center justify-center text-center px-4 overflow-hidden"
+                className="relative h-[420px] sm:h-[520px] md:h-[600px] bg-gradient-to-br from-aura-sand via-aura-cream to-aura-blue/20 flex items-center justify-center text-center px-4 overflow-hidden"
             >
                 <div className="absolute inset-0 opacity-10 bg-[url('https://i.pinimg.com/1200x/ba/f9/7a/baf97a3ef22d862453c720fbfcee05fe.jpg')] bg-cover bg-center mix-blend-multiply pointer-events-none"></div>
                 <div className="relative z-10 max-w-2xl mx-auto">
