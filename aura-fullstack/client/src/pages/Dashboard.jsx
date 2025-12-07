@@ -64,13 +64,13 @@ const Dashboard = () => {
                                             {order.items.map((item, idx) => (
                                                 <div key={idx} className="flex justify-between text-sm">
                                                     <span>{item.name} x {item.qty}</span>
-                                                    <span>${(item.price * item.qty).toFixed(2)}</span>
+                                                    <span>₹{(item.price * item.qty).toFixed(2)}</span>
                                                 </div>
                                             ))}
                                         </div>
                                         <div className="mt-4 pt-4 border-t border-gray-100 flex justify-between font-bold text-aura-dark">
                                             <span>Total</span>
-                                            <span>${order.total.toFixed(2)}</span>
+                                            <span>₹{order.total.toFixed(2)}</span>
                                         </div>
                                     </div>
                                 ))}

@@ -35,6 +35,44 @@ const AdminDashboard = () => {
         }
     };
 
+    const [showAddModal, setShowAddModal] = useState(false);
+    const [newProduct, setNewProduct] = useState({
+        name: '',
+        price: '',
+        category: '',
+        stock: '',
+        description: '',
+        images: '',
+        description: ''
+    });
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setNewProduct(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleCreateProduct = async (e) => {
+        e.preventDefault();
+        try {
+            // Split images by comma if multiple
+            const productData = {
+                ...newProduct,
+                images: newProduct.images.split(',').map(img => img.trim()),
+                price: Number(newProduct.price),
+                stock: Number(newProduct.stock)
+            };
+
+            const { data } = await API.post('/products', productData);
+            setProducts([data, ...products]);
+            setShowAddModal(false);
+            setNewProduct({ name: '', price: '', category: '', stock: '', description: '', images: '' });
+            alert('Product added successfully');
+        } catch (error) {
+            console.error(error);
+            alert('Failed to add product');
+        }
+    };
+
     return (
         <div className="min-h-screen bg-gray-50 flex">
             {/* Sidebar */}
@@ -48,10 +86,10 @@ const AdminDashboard = () => {
             </div>
 
             {/* Content */}
-            <div className="flex-1 p-8">
+            <div className="flex-1 p-8 relative">
                 <div className="mb-8 flex justify-between items-center">
                     <h1 className="text-3xl font-serif text-aura-dark capitalize">{view} Management</h1>
-                    {view === 'products' && <button onClick={() => alert('Create feature to be implemented fully')} className="btn-primary">+ Add Product</button>}
+                    {view === 'products' && <button onClick={() => setShowAddModal(true)} className="btn-primary">+ Add Product</button>}
                 </div>
 
                 <div className="bg-white shadow-sm border border-gray-100 overflow-hidden">
@@ -71,7 +109,7 @@ const AdminDashboard = () => {
                                     <tr key={product._id}>
                                         <td className="px-6 py-4 text-xs font-mono">{product._id.substring(0, 6)}...</td>
                                         <td className="px-6 py-4">{product.name}</td>
-                                        <td className="px-6 py-4">${product.price}</td>
+                                        <td className="px-6 py-4">₹{product.price}</td>
                                         <td className="px-6 py-4">{product.stock}</td>
                                         <td className="px-6 py-4">
                                             <button onClick={() => handleDeleteProduct(product._id)} className="text-red-500 hover:text-red-700 text-sm">Delete</button>
@@ -99,7 +137,7 @@ const AdminDashboard = () => {
                                         <td className="px-6 py-4 text-xs font-mono">{order._id.substring(0, 6)}...</td>
                                         <td className="px-6 py-4">{order.userId ? order.userId.name : 'Unknown'}</td>
                                         <td className="px-6 py-4">{new Date(order.createdAt).toLocaleDateString()}</td>
-                                        <td className="px-6 py-4">${order.total.toFixed(2)}</td>
+                                        <td className="px-6 py-4">₹{order.total.toFixed(2)}</td>
                                         <td className="px-6 py-4">{order.status}</td>
                                     </tr>
                                 ))}
@@ -130,6 +168,48 @@ const AdminDashboard = () => {
                         </table>
                     )}
                 </div>
+
+                {/* Add Product Modal */}
+                {showAddModal && (
+                    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 px-4">
+                        <div className="bg-white p-8 rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
+                            <h2 className="text-2xl font-serif text-aura-dark mb-6">Add New Product</h2>
+                            <form onSubmit={handleCreateProduct} className="space-y-4">
+                                <div>
+                                    <label className="block text-xs uppercase tracking-wider text-aura-text mb-1">Product Name</label>
+                                    <input type="text" name="name" required className="input-field" value={newProduct.name} onChange={handleInputChange} />
+                                </div>
+                                <div className="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label className="block text-xs uppercase tracking-wider text-aura-text mb-1">Price (₹)</label>
+                                        <input type="number" name="price" required className="input-field" value={newProduct.price} onChange={handleInputChange} />
+                                    </div>
+                                    <div>
+                                        <label className="block text-xs uppercase tracking-wider text-aura-text mb-1">Stock</label>
+                                        <input type="number" name="stock" required className="input-field" value={newProduct.stock} onChange={handleInputChange} />
+                                    </div>
+                                </div>
+                                <div>
+                                    <label className="block text-xs uppercase tracking-wider text-aura-text mb-1">Category (comma sep)</label>
+                                    <input type="text" name="category" placeholder="soap, skincare" className="input-field" value={newProduct.category} onChange={handleInputChange} />
+                                </div>
+                                <div>
+                                    <label className="block text-xs uppercase tracking-wider text-aura-text mb-1">Image URLs (comma sep)</label>
+                                    <input type="text" name="images" required placeholder="http://..., http://..." className="input-field" value={newProduct.images} onChange={handleInputChange} />
+                                </div>
+                                <div>
+                                    <label className="block text-xs uppercase tracking-wider text-aura-text mb-1">Description</label>
+                                    <textarea name="description" rows="3" required className="input-field" value={newProduct.description} onChange={handleInputChange}></textarea>
+                                </div>
+
+                                <div className="flex gap-4 mt-8 pt-4 border-t border-gray-100">
+                                    <button type="button" onClick={() => setShowAddModal(false)} className="flex-1 py-3 text-aura-lightText hover:text-aura-dark transition-colors">Cancel</button>
+                                    <button type="submit" className="flex-1 btn-primary">Add Product</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     );
