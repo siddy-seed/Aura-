@@ -17,7 +17,14 @@ const getProducts = async (req, res) => {
             }
             : {};
 
-        const category = req.query.category ? { category: req.query.category } : {};
+        const category = req.query.category
+            ? {
+                category: {
+                    $regex: req.query.category,
+                    $options: 'i',
+                },
+            }
+            : {};
 
         const count = await Product.countDocuments({ ...keyword, ...category });
         const products = await Product.find({ ...keyword, ...category })
@@ -52,19 +59,27 @@ const getProductById = async (req, res) => {
 // @desc    Create a product
 // @route   POST /api/products
 // @access  Private/Admin
+// @desc    Create a product
+// @route   POST /api/products
+// @access  Private/Admin
 const createProduct = async (req, res) => {
     try {
+        let imagePaths = [];
+        if (req.files) {
+            imagePaths = req.files.map(file => `/uploads/${file.filename}`);
+        }
+
         const product = new Product({
             name: req.body.name,
             price: req.body.price,
             user: req.user._id,
-            images: req.body.images,
+            images: imagePaths,
             category: req.body.category,
-            countInStock: req.body.countInStock,
+            countInStock: req.body.countInStock || 0,
             stock: req.body.stock,
             description: req.body.description,
-            ingredients: req.body.ingredients,
-            sizes: req.body.sizes
+            ingredients: req.body.ingredients ? req.body.ingredients.split(',').map(i => i.trim()) : [],
+            sizes: req.body.sizes ? req.body.sizes.split(',').map(s => s.trim()) : []
         });
 
         const createdProduct = await product.save();

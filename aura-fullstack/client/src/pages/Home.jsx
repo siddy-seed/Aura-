@@ -41,7 +41,7 @@ const Home = () => {
                 variants={fadeInUp}
                 className="relative h-[600px] bg-gradient-to-br from-aura-sand via-aura-cream to-aura-blue/20 flex items-center justify-center text-center px-4 overflow-hidden"
             >
-                <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1629198688000-71f23e745b6e?w=1600&q=80')] bg-cover bg-center mix-blend-multiply pointer-events-none"></div>
+                <div className="absolute inset-0 opacity-10 bg-[url('https://i.pinimg.com/1200x/ba/f9/7a/baf97a3ef22d862453c720fbfcee05fe.jpg')] bg-cover bg-center mix-blend-multiply pointer-events-none"></div>
                 <div className="relative z-10 max-w-2xl mx-auto">
                     <motion.p variants={fadeInUp} className="text-aura-pink tracking-[0.2em] uppercase text-xs font-bold mb-6">Welcome to Aura</motion.p>
                     <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-serif text-aura-charcoal mb-6 leading-tight">
@@ -132,7 +132,7 @@ const Home = () => {
                             whileHover={{ y: -10 }}
                             className="p-8 bg-white/50 rounded-2xl border border-white shadow-sm hover:shadow-xl hover:shadow-aura-pink/10 transition-all duration-300"
                         >
-                            <div className="w-20 h-20 rounded-full mx-auto mb-6 bg-aura-pink/20 flex items-center justify-center text-aura-pink text-xl font-serif font-bold border-4 border-white shadow-md">JM</div>
+                            <img src="/testimonials/customer3.png" alt="Jessica M." className="w-20 h-20 rounded-full mx-auto mb-6 object-cover border-4 border-white shadow-md" />
                             <div className="text-aura-pink text-5xl font-serif mb-4 leading-none opacity-50">"</div>
                             <p className="text-aura-text italic mb-6 font-light">A truly premium experience from unboxing to using the product.</p>
                             <p className="font-bold text-xs uppercase tracking-widest text-aura-charcoal">- Jessica M.</p>

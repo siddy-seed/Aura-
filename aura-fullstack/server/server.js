@@ -24,6 +24,9 @@ app.get('/', (req, res) => {
     res.send('API is running...');
 });
 
+const path = require('path');
+app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
+
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;

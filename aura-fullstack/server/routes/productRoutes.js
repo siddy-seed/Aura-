@@ -10,9 +10,11 @@ const {
 const { protect } = require('../middleware/authMiddleware');
 const { admin } = require('../middleware/adminMiddleware');
 
+const upload = require('../middleware/uploadMiddleware');
+
 router.route('/')
     .get(getProducts)
-    .post(protect, admin, createProduct);
+    .post(protect, admin, upload.array('images'), createProduct);
 
 router.route('/:id')
     .get(getProductById)
