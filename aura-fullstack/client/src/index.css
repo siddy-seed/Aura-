@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-aura-pink: #F4C2C2;
+  --color-aura-blue: #CAE9F5;
+  --color-aura-cream: #FFFEFA;
+  --color-aura-charcoal: #2D2D2D;
+  --color-aura-sand: #F5E6E0;
+  --color-aura-text: #4A4A4A;
+  --color-aura-lightText: #888888;
+
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+}
+
+body {
+  background-color: #FFFEFA;
+  /* aura-cream */
+  color: #4A4A4A;
+  /* aura-text */
+  font-family: 'Inter', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Playfair Display', serif;
+  color: #2D2D2D;
+}
+
+.btn-primary {
+  @apply bg-aura-pink text-aura-charcoal px-8 py-3 rounded-full hover:bg-aura-blue hover:text-aura-charcoal transition-all duration-500 shadow-sm uppercase tracking-widest text-xs font-bold border border-transparent;
+}
+
+.btn-secondary {
+  @apply border border-aura-pink text-aura-pink px-8 py-3 rounded-full hover:bg-aura-pink hover:text-white transition-all duration-500 uppercase tracking-widest text-xs font-bold;
+}
+
+.input-field {
+  @apply w-full border border-gray-200 bg-white/50 p-3 focus:outline-none focus:border-aura-pink focus:ring-1 focus:ring-aura-pink/50 rounded-sm transition-all duration-300;
+}
