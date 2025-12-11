@@ -61,20 +61,19 @@ const getProductById = async (req, res) => {
 // @access  Private/Admin
 const createProduct = async (req, res) => {
     try {
-        // Get image URLs directly from request body
-        const imageUrls = req.body.images || [];
-
         const product = new Product({
             name: req.body.name,
             price: req.body.price,
             user: req.user._id,
-            images: imageUrls,
             category: req.body.category,
-            countInStock: req.body.countInStock || 0,
             stock: req.body.stock,
+
+            // Fix: accept arrays directly
+            images: Array.isArray(req.body.images) ? req.body.images : [],
+            ingredients: Array.isArray(req.body.ingredients) ? req.body.ingredients : [],
+            sizes: Array.isArray(req.body.sizes) ? req.body.sizes : [],
+
             description: req.body.description,
-            ingredients: req.body.ingredients ? req.body.ingredients.split(',').map(i => i.trim()) : [],
-            sizes: req.body.sizes ? req.body.sizes.split(',').map(s => s.trim()) : []
         });
 
         const createdProduct = await product.save();
@@ -83,6 +82,7 @@ const createProduct = async (req, res) => {
         res.status(400).json({ message: error.message });
     }
 };
+
 
 // @desc    Update a product
 // @route   PUT /api/products/:id
