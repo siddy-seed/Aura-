@@ -33,7 +33,7 @@ const Header = () => {
         <header className="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-aura-pink/20">
             <div className="container mx-auto px-4 sm:px-6 md:px-6 py-4 flex justify-between items-center">
                 <Link to="/" className="flex items-center gap-3 group">
-                    <img src="/aura-logo.png" alt="Aura Logo" className="h-10 sm:h-12 w-auto object-contain group-hover:opacity-80 transition-opacity" />
+                    <img src="https://res.cloudinary.com/dgdpqdahl/image/upload/v1765457650/aura/brand/aura-logo.png" alt="Aura Logo" className="h-10 sm:h-12 w-auto object-contain group-hover:opacity-80 transition-opacity" />
                     <span className="text-2xl sm:text-3xl font-serif text-aura-charcoal tracking-wide font-bold group-hover:text-aura-pink transition-colors">Aura</span>
                 </Link>
 

@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import aboutFloralLogo from '../assets/about-logo-floral.png';
 
 const About = () => {
     const fadeInUp = {
@@ -47,7 +46,7 @@ const About = () => {
                         >
                             <div className="relative flex justify-center items-center">
                                 <img
-                                    src={aboutFloralLogo}
+                                    src="https://res.cloudinary.com/dgdpqdahl/image/upload/v1765457652/aura/brand/about-logo-floral.png"
                                     alt="Aura Floral Logo"
                                     className="w-full max-w-md object-contain hover:scale-105 transition-transform duration-700 filter drop-shadow-xl"
                                 />

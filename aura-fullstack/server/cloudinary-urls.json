@@ -1,0 +1,77 @@
+[
+  {
+    "localPath": "../../client/public/products/product-1.jpg",
+    "cloudinaryUrl": "https://res.cloudinary.com/dgdpqdahl/image/upload/v1765457634/aura/products/product-1.jpg",
+    "publicId": "aura/products/product-1"
+  },
+  {
+    "localPath": "../../client/public/products/product-2.jpg",
+    "cloudinaryUrl": "https://res.cloudinary.com/dgdpqdahl/image/upload/v1765457636/aura/products/product-2.jpg",
+    "publicId": "aura/products/product-2"
+  },
+  {
+    "localPath": "../../client/public/products/product-3.jpg",
+    "cloudinaryUrl": "https://res.cloudinary.com/dgdpqdahl/image/upload/v1765457637/aura/products/product-3.jpg",
+    "publicId": "aura/products/product-3"
+  },
+  {
+    "localPath": "../../client/public/products/product-4.jpg",
+    "cloudinaryUrl": "https://res.cloudinary.com/dgdpqdahl/image/upload/v1765457639/aura/products/product-4.jpg",
+    "publicId": "aura/products/product-4"
+  },
+  {
+    "localPath": "../../client/public/products/product-5.jpg",
+    "cloudinaryUrl": "https://res.cloudinary.com/dgdpqdahl/image/upload/v1765457640/aura/products/product-5.jpg",
+    "publicId": "aura/products/product-5"
+  },
+  {
+    "localPath": "../../client/public/products/product-6.jpg",
+    "cloudinaryUrl": "https://res.cloudinary.com/dgdpqdahl/image/upload/v1765457642/aura/products/product-6.jpg",
+    "publicId": "aura/products/product-6"
+  },
+  {
+    "localPath": "../../client/public/products/product-7.png",
+    "cloudinaryUrl": "https://res.cloudinary.com/dgdpqdahl/image/upload/v1765457644/aura/products/product-7.png",
+    "publicId": "aura/products/product-7"
+  },
+  {
+    "localPath": "../../client/public/products/product-8.jpg",
+    "cloudinaryUrl": "https://res.cloudinary.com/dgdpqdahl/image/upload/v1765457645/aura/products/product-8.jpg",
+    "publicId": "aura/products/product-8"
+  },
+  {
+    "localPath": "../../client/public/testimonials/customer1.png",
+    "cloudinaryUrl": "https://res.cloudinary.com/dgdpqdahl/image/upload/v1765457646/aura/testimonials/customer1.png",
+    "publicId": "aura/testimonials/customer1"
+  },
+  {
+    "localPath": "../../client/public/testimonials/customer2.png",
+    "cloudinaryUrl": "https://res.cloudinary.com/dgdpqdahl/image/upload/v1765457646/aura/testimonials/customer2.png",
+    "publicId": "aura/testimonials/customer2"
+  },
+  {
+    "localPath": "../../client/public/testimonials/customer3.png",
+    "cloudinaryUrl": "https://res.cloudinary.com/dgdpqdahl/image/upload/v1765457648/aura/testimonials/customer3.png",
+    "publicId": "aura/testimonials/customer3"
+  },
+  {
+    "localPath": "../../client/public/aura-logo.png",
+    "cloudinaryUrl": "https://res.cloudinary.com/dgdpqdahl/image/upload/v1765457650/aura/brand/aura-logo.png",
+    "publicId": "aura/brand/aura-logo"
+  },
+  {
+    "localPath": "../../client/src/assets/about-logo-floral.png",
+    "cloudinaryUrl": "https://res.cloudinary.com/dgdpqdahl/image/upload/v1765457652/aura/brand/about-logo-floral.png",
+    "publicId": "aura/brand/about-logo-floral"
+  },
+  {
+    "localPath": "../../client/src/assets/about-logo.png",
+    "cloudinaryUrl": "https://res.cloudinary.com/dgdpqdahl/image/upload/v1765457653/aura/brand/about-logo.png",
+    "publicId": "aura/brand/about-logo"
+  },
+  {
+    "localPath": "../../client/src/assets/about-brand.png",
+    "cloudinaryUrl": "https://res.cloudinary.com/dgdpqdahl/image/upload/v1765457655/aura/brand/about-brand.png",
+    "publicId": "aura/brand/about-brand"
+  }
+]

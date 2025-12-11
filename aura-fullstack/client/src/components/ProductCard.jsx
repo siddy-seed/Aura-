@@ -5,7 +5,7 @@ const ProductCard = ({ product }) => {
         <div className="group relative bg-white rounded-2xl border border-aura-pink/10 hover:shadow-xl hover:shadow-aura-pink/5 transition-all duration-500 overflow-hidden">
             <Link to={`/products/${product._id}`} className="block overflow-hidden relative pb-[100%] md:pb-[75%]">
                 <img
-                    src={`${import.meta.env.VITE_FRONTEND_URL}${product.images[0]}`}
+                    src={product.images[0]}
                     alt={product.name}
                     className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                     referrerPolicy="no-referrer"

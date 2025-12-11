@@ -49,7 +49,7 @@ const seedData = async () => {
                 description: 'Activated charcoal soap to draw out impurities and deep cleanse pores.',
                 ingredients: ['Activated Charcoal', 'Tea Tree Oil', 'Coconut Oil'],
                 stock: 50,
-                images: ['/products/product-1.jpg'],
+                images: ['https://res.cloudinary.com/dgdpqdahl/image/upload/v1765457634/aura/products/product-1.jpg'],
                 sizes: ['150g']
             },
             {
@@ -59,7 +59,7 @@ const seedData = async () => {
                 description: 'Fun Mickey Mouse shaped soap for kids. Gentle and mild.',
                 ingredients: ['Glycerin', 'Milk', 'Mild Fragrance'],
                 stock: 30,
-                images: ['/products/product-2.jpg'],
+                images: ['https://res.cloudinary.com/dgdpqdahl/image/upload/v1765457636/aura/products/product-2.jpg'],
                 sizes: ['75g']
             },
             {
@@ -69,7 +69,7 @@ const seedData = async () => {
                 description: 'Spooky pumpkin shaped soap, perfect for Halloween festive vibes.',
                 ingredients: ['Pumpkin Extract', 'Cinnamon Oil', 'Soap Base'],
                 stock: 40,
-                images: ['/products/product-3.jpg'],
+                images: ['https://res.cloudinary.com/dgdpqdahl/image/upload/v1765457637/aura/products/product-3.jpg'],
                 sizes: ['100g']
             },
             {
@@ -79,7 +79,7 @@ const seedData = async () => {
                 description: 'Luxurious glycerine soap with honey and grape extracts for hydrated skin.',
                 ingredients: ['Glycerin', 'Honey', 'Grape Extract'],
                 stock: 25,
-                images: ['/products/product-4.jpg'],
+                images: ['https://res.cloudinary.com/dgdpqdahl/image/upload/v1765457639/aura/products/product-4.jpg'],
                 sizes: ['150g']
             },
             {
@@ -89,7 +89,7 @@ const seedData = async () => {
                 description: 'Rich goat milk soap enriched with grape antioxidants.',
                 ingredients: ['Goat Milk', 'Grape Seed Oil', 'Vitamin E'],
                 stock: 60,
-                images: ['/products/product-5.jpg'],
+                images: ['https://res.cloudinary.com/dgdpqdahl/image/upload/v1765457640/aura/products/product-5.jpg'],
                 sizes: ['150g']
             },
             {
@@ -99,7 +99,7 @@ const seedData = async () => {
                 description: 'Rose scented soap cakes with a classic floral fragrance.',
                 ingredients: ['Rose Water', 'Shea Butter', 'Essential Oils'],
                 stock: 20,
-                images: ['/products/product-6.jpg'],
+                images: ['https://res.cloudinary.com/dgdpqdahl/image/upload/v1765457642/aura/products/product-6.jpg'],
                 sizes: ['50g']
             },
             {
@@ -109,7 +109,7 @@ const seedData = async () => {
                 description: 'Creamy milk-based soap with essence of rose.',
                 ingredients: ['Milk Protein', 'Rose Oil', 'Cocoa Butter'],
                 stock: 45,
-                images: ['/products/product-7.png'],
+                images: ['https://res.cloudinary.com/dgdpqdahl/image/upload/v1765457644/aura/products/product-7.png'],
                 sizes: ['120g']
             },
             {
@@ -119,7 +119,7 @@ const seedData = async () => {
                 description: 'Fresh watermelon slice soap. Looks and smells like summer.',
                 ingredients: ['Watermelon Extract', 'Cucumber', 'Poppy Seeds'],
                 stock: 50,
-                images: ['/products/product-8.jpg'],
+                images: ['https://res.cloudinary.com/dgdpqdahl/image/upload/v1765457645/aura/products/product-8.jpg'],
                 sizes: ['150g']
             }
         ];

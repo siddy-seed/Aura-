@@ -60,7 +60,7 @@ const ProductDetails = () => {
                     {/* Image */}
                     <div className="bg-aura-cream/20 rounded-xl overflow-hidden shadow-sm">
                         <img
-                            src={`${import.meta.env.VITE_FRONTEND_URL}${product.images[0]}`}
+                            src={product.images[0]}
                             alt={product.name}
                             className="w-full h-[320px] md:h-[500px] object-cover"
                         />

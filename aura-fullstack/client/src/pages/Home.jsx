@@ -112,7 +112,7 @@ const Home = () => {
                             whileHover={{ y: -10 }}
                             className="p-8 bg-white/50 rounded-2xl border border-white shadow-sm hover:shadow-xl hover:shadow-aura-pink/10 transition-all duration-300"
                         >
-                            <img src="/testimonials/customer1.png" alt="Emma S." className="w-20 h-20 rounded-full mx-auto mb-6 object-cover border-4 border-white shadow-md" />
+                            <img src="https://res.cloudinary.com/dgdpqdahl/image/upload/v1765457646/aura/testimonials/customer1.png" alt="Emma S." className="w-20 h-20 rounded-full mx-auto mb-6 object-cover border-4 border-white shadow-md" />
                             <div className="text-aura-pink text-5xl font-serif mb-4 leading-none opacity-50">"</div>
                             <p className="text-aura-text italic mb-6 font-light">The soaps are absolutely divine. My skin has never felt softer.</p>
                             <p className="font-bold text-xs uppercase tracking-widest text-aura-charcoal">- Emma S.</p>
@@ -122,7 +122,7 @@ const Home = () => {
                             whileHover={{ y: -10 }}
                             className="p-8 bg-white/50 rounded-2xl border border-white shadow-sm hover:shadow-xl hover:shadow-aura-pink/10 transition-all duration-300"
                         >
-                            <img src="/testimonials/customer2.png" alt="Sarah L." className="w-20 h-20 rounded-full mx-auto mb-6 object-cover border-4 border-white shadow-md" />
+                            <img src="https://res.cloudinary.com/dgdpqdahl/image/upload/v1765457646/aura/testimonials/customer2.png" alt="Sarah L." className="w-20 h-20 rounded-full mx-auto mb-6 object-cover border-4 border-white shadow-md" />
                             <div className="text-aura-pink text-5xl font-serif mb-4 leading-none opacity-50">"</div>
                             <p className="text-aura-text italic mb-6 font-light">I love the sustainable packaging and the lavender scent is heaven.</p>
                             <p className="font-bold text-xs uppercase tracking-widest text-aura-charcoal">- Sarah L.</p>
@@ -132,7 +132,7 @@ const Home = () => {
                             whileHover={{ y: -10 }}
                             className="p-8 bg-white/50 rounded-2xl border border-white shadow-sm hover:shadow-xl hover:shadow-aura-pink/10 transition-all duration-300"
                         >
-                            <img src="/testimonials/customer3.png" alt="Jessica M." className="w-20 h-20 rounded-full mx-auto mb-6 object-cover border-4 border-white shadow-md" />
+                            <img src="https://res.cloudinary.com/dgdpqdahl/image/upload/v1765457648/aura/testimonials/customer3.png" alt="Jessica M." className="w-20 h-20 rounded-full mx-auto mb-6 object-cover border-4 border-white shadow-md" />
                             <div className="text-aura-pink text-5xl font-serif mb-4 leading-none opacity-50">"</div>
                             <p className="text-aura-text italic mb-6 font-light">A truly premium experience from unboxing to using the product.</p>
                             <p className="font-bold text-xs uppercase tracking-widest text-aura-charcoal">- Jessica M.</p>

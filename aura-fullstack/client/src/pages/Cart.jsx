@@ -102,7 +102,7 @@ const Cart = () => {
                     <div className="md:col-span-2 space-y-6">
                         {cart.items.map(item => (
                             <div key={item._id} className="flex gap-4 border-b border-gray-100 pb-6">
-                                <img src={`${import.meta.env.VITE_FRONTEND_URL}${item.productId.images[0]}`} alt={item.productId.name} className="w-24 h-24 object-cover" />
+                                <img src={item.productId.images[0]} alt={item.productId.name} className="w-24 h-24 object-cover" />
                                 <div className="flex-1">
                                     <div className="flex justify-between mb-2">
                                         <h3 className="font-serif text-lg text-aura-dark">{item.productId.name}</h3>
