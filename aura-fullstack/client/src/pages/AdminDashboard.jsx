@@ -42,46 +42,45 @@ const AdminDashboard = () => {
         category: '',
         stock: '',
         description: '',
-        images: [],
+        images: '',
         ingredients: '',
         sizes: ''
     });
 
     const handleInputChange = (e) => {
-        const { name, value, files } = e.target;
-        if (name === 'images') {
-            setNewProduct(prev => ({ ...prev, [name]: files }));
-        } else {
-            setNewProduct(prev => ({ ...prev, [name]: value }));
-        }
+        const { name, value } = e.target;
+        setNewProduct(prev => ({ ...prev, [name]: value }));
     };
 
     const handleCreateProduct = async (e) => {
         e.preventDefault();
         try {
-            const formData = new FormData();
-            formData.append('name', newProduct.name);
-            formData.append('price', newProduct.price);
-            formData.append('category', newProduct.category);
-            formData.append('stock', newProduct.stock);
-            formData.append('description', newProduct.description);
-            formData.append('ingredients', newProduct.ingredients);
-            formData.append('sizes', newProduct.sizes);
+            // Convert comma-separated URLs to array
+            const imageUrls = newProduct.images
+                .split(',')
+                .map(url => url.trim())
+                .filter(url => url.length > 0);
 
-            if (newProduct.images) {
-                for (let i = 0; i < newProduct.images.length; i++) {
-                    formData.append('images', newProduct.images[i]);
-                }
-            }
+            const productData = {
+                name: newProduct.name,
+                price: newProduct.price,
+                category: newProduct.category,
+                stock: newProduct.stock,
+                description: newProduct.description,
+                ingredients: newProduct.ingredients,
+                sizes: newProduct.sizes,
+                images: imageUrls
+            };
 
-            const { data } = await API.post('/products', formData, {
+            const { data } = await API.post('/products', productData, {
                 headers: {
-                    'Content-Type': 'multipart/form-data'
+                    'Content-Type': 'application/json'
                 }
             });
+
             setProducts([data, ...products]);
             setShowAddModal(false);
-            setNewProduct({ name: '', price: '', category: '', stock: '', description: '', images: [], ingredients: '', sizes: '' });
+            setNewProduct({ name: '', price: '', category: '', stock: '', description: '', images: '', ingredients: '', sizes: '' });
             alert('Product added successfully');
         } catch (error) {
             console.error(error);
@@ -210,8 +209,17 @@ const AdminDashboard = () => {
                                     <input type="text" name="category" placeholder="soap, skincare" className="input-field" value={newProduct.category} onChange={handleInputChange} />
                                 </div>
                                 <div>
-                                    <label className="block text-xs uppercase tracking-wider text-aura-text mb-1">Images</label>
-                                    <input type="file" name="images" multiple required className="input-field p-2" onChange={handleInputChange} />
+                                    <label className="block text-xs uppercase tracking-wider text-aura-text mb-1">Image URLs (Cloudinary)</label>
+                                    <input
+                                        type="text"
+                                        name="images"
+                                        placeholder="Paste Cloudinary URLs (comma-separated for multiple)"
+                                        required
+                                        className="input-field"
+                                        value={newProduct.images}
+                                        onChange={handleInputChange}
+                                    />
+                                    <p className="text-xs text-aura-lightText mt-1">Upload images to Cloudinary first, then paste URLs here</p>
                                 </div>
                                 <div>
                                     <label className="block text-xs uppercase tracking-wider text-aura-text mb-1">Description</label>

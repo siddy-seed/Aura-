@@ -14,7 +14,7 @@ const upload = require('../middleware/uploadMiddleware');
 
 router.route('/')
     .get(getProducts)
-    .post(protect, admin, upload.array('images'), createProduct);
+    .post(protect, admin, createProduct);
 
 router.route('/:id')
     .get(getProductById)
