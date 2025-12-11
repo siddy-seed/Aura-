@@ -59,21 +59,33 @@ const getProductById = async (req, res) => {
 // @desc    Create a product
 // @route   POST /api/products
 // @access  Private/Admin
-// @desc    Create a product
-// @route   POST /api/products
-// @access  Private/Admin
 const createProduct = async (req, res) => {
     try {
-        let imagePaths = [];
-        if (req.files) {
-            imagePaths = req.files.map(file => `/uploads/${file.filename}`);
+        const cloudinary = require('../config/cloudinary.config');
+        let cloudinaryUrls = [];
+
+        // Upload images to Cloudinary if files are provided
+        if (req.files && req.files.length > 0) {
+            for (const file of req.files) {
+                try {
+                    // Upload to Cloudinary
+                    const result = await cloudinary.uploader.upload(file.path, {
+                        folder: 'aura/products',
+                        resource_type: 'auto',
+                    });
+                    cloudinaryUrls.push(result.secure_url);
+                } catch (uploadError) {
+                    console.error('Cloudinary upload error:', uploadError);
+                    return res.status(500).json({ message: 'Error uploading image to Cloudinary' });
+                }
+            }
         }
 
         const product = new Product({
             name: req.body.name,
             price: req.body.price,
             user: req.user._id,
-            images: imagePaths,
+            images: cloudinaryUrls,
             category: req.body.category,
             countInStock: req.body.countInStock || 0,
             stock: req.body.stock,
