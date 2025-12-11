@@ -213,7 +213,7 @@ const AdminDashboard = () => {
                                     <input
                                         type="text"
                                         name="images"
-                                        placeholder="Paste Cloudinary URLs (comma-separated for multiple)"
+                                        placeholder="Paste URLs (comma-separated for multiple)"
                                         required
                                         className="input-field"
                                         value={newProduct.images}
